@@ -5,14 +5,23 @@ import PropTypes from 'prop-types';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 
-function InputPhone(props) {
-  const { updatePhone, phone, formChangeState } = props;
+function InputPhone({ updatePhone, phone, formChangeState }) {
   return (
     <section className="inputs">
       <label htmlFor="phone">your phone</label>
-      <PhoneInput name="phone" placeholder="Enter phone number" value={phone} onChange={updatePhone} />
+      <PhoneInput
+        name="phone"
+        placeholder="Enter phone number"
+        value={phone}
+        onChange={updatePhone}
+      />
       <label htmlFor="message">your message</label>
-      <textarea label="Mensagem" placeholder="Type your message..." name="message" onChange={formChangeState} />
+      <textarea
+        label="Mensagem"
+        placeholder="Type your message..."
+        name="message"
+        onChange={formChangeState}
+      />
     </section>
   );
 }
@@ -23,7 +32,7 @@ InputPhone.defaultProps = {
 InputPhone.propTypes = {
   updatePhone: PropTypes.func.isRequired,
   formChangeState: PropTypes.func.isRequired,
-  phone: PropTypes.string,
+  phone: PropTypes.string
 };
 
 export default InputPhone;

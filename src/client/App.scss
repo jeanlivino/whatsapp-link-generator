@@ -1,18 +1,23 @@
-body{
+$azul: #64b3f4;
+
+body {
   margin: 0;
 }
-#root{
+
+#root {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  .background{
+
+  .background {
     position: absolute;
     z-index: -1;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  .form{
+
+  .form {
     width: 100%;
     background: #fff;
     border-radius: 15px;
@@ -20,7 +25,8 @@ body{
     box-shadow: 2px 5px 34px 0px rgba(0, 0, 0, 0.33);
   }
 }
-.hero-section{
+
+.hero-section {
   padding: 5px;
   text-align: center;
   color: #fff;
@@ -28,41 +34,50 @@ body{
   display: flex;
   align-items: center;
   justify-content: center;
-  @media screen and (max-width: 760px){
+
+  @media screen and (max-width: 760px) {
     flex-flow: column;
   }
-  h1{
+
+  h1 {
     font-weight: 500;
     letter-spacing: 1px;
     margin: 0;
   }
-  svg{
+
+  svg {
     fill: #fff;
     width: 60px;
     margin-right: 10px;
   }
 }
-.your-link{
-  .row{
+
+.your-link {
+  .row {
     max-width: 100%;
   }
-  h3{
+
+  h3 {
     margin-bottom: 0px;
     font-weight: 500;
   }
-  .copy-to{
+
+  .copy-to {
     @media screen and (max-width: 760px) {
       flex-flow: column;
+
       .column {
         max-width: 100%;
       }
 
     }
-    .column{
+
+    .column {
       margin: 5px;
     }
   }
 }
+
 input[type='email'],
 input[type='number'],
 input[type='password'],
@@ -71,17 +86,19 @@ input[type='tel'],
 input[type='text'],
 input[type='url'],
 textarea,
-select{
+select {
   font-size: 1.2rem;
 }
+
 .button,
 button,
 input[type='button'],
 input[type='reset'],
 input[type='submit'] {
-  background-color: #64b3f4;
-  border-color: #64b3f4;
+  background-color: $azul;
+  border-color: $azul;
 }
+
 input[type='email']:focus,
 input[type='number']:focus,
 input[type='password']:focus,
@@ -90,28 +107,32 @@ input[type='tel']:focus,
 input[type='text']:focus,
 input[type='url']:focus,
 textarea:focus,
-select:focus,
-{
-  border-color: #64b3f4
+select:focus {
+  border-color: $azul
 }
-.react-phone-number-input__country--native{
+
+.react-phone-number-input__country--native {
   max-height: 37px;
 }
+
 .react-phone-number-input__icon:not(.react-phone-number-input__icon--international) {
   border: none;
   align-items: center;
   display: flex;
 }
-blockquote{
-  border-color: #64b3f4;
+
+blockquote {
+  border-color: $azul;
 }
-.footer{
-  a{
+
+.footer {
+  a {
     color: #fff;
     text-align: center;
     display: block;
     padding: 10px;
-    &:hover{
+
+    &:hover {
       text-decoration: underline;
     }
   }
