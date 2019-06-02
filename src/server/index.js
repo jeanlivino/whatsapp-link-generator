@@ -14,7 +14,7 @@ const generateLink = (req) => {
   if (deviceType === 'desktop') {
     return `https://web.whatsapp.com/send?phone=${p}&text=${m}`;
   }
-  return `https://api.whatsapp.com/send?phone=${p}&text=${m}`;
+  return `whatsapp://send?phone=${p}&text=${m}`;
 };
 
 app.get('/go', (req, res) => {
