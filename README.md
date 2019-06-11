@@ -2,7 +2,7 @@
 
 A WhatsApp link generator with redirect to correct api using React and Express. The server check if the device is Desktop to redirect for the web.whatsapp. [Read more about this.](https://medium.com/@jeanlivino/how-to-fix-whatsapp-api-in-desktop-browsers-fc661b513dc)
 
-See running at: [wpp-redirect.herokuapp.com](https://wpp-redirect.herokuapp.com/)
+See running at: [http://wppredirect.tk](http://wppredirect.tk)
 
 ![screenshot](https://i.imgur.com/WcHhUvf.png)
 
