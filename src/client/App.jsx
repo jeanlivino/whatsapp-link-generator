@@ -33,7 +33,7 @@ export default class App extends Component {
 
   updateLink = (state) => {
     const { hostname } = window.location;
-    const link = `${hostname}/go/?p=${state.phone ? state.phone.substr(1) : ''}&m=${
+    const link = `http://${hostname}/go/?p=${state.phone ? state.phone.substr(1) : ''}&m=${
       state.message ? state.message : ''
     }`;
     this.setState({ link });
