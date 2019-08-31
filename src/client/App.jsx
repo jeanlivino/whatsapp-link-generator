@@ -4,7 +4,6 @@ import 'milligram/dist/milligram.min.css';
 
 // custom
 import './App.scss';
-import imageBg from './bg.png';
 
 // my components
 import Header from './components/Header';
@@ -49,7 +48,6 @@ export default class App extends Component {
     const { updatePhone, formChangeState, onCopy } = this;
     return (
       <Fragment>
-        <img src={imageBg} alt="background" className="background" />
         <main className="content container">
           <Header />
           <section className="form">

@@ -69,7 +69,6 @@ body {
       .column {
         max-width: 100%;
       }
-
     }
 
     .column {
@@ -78,13 +77,13 @@ body {
   }
 }
 
-input[type='email'],
-input[type='number'],
-input[type='password'],
-input[type='search'],
-input[type='tel'],
-input[type='text'],
-input[type='url'],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
 textarea,
 select {
   font-size: 1.2rem;
@@ -92,23 +91,23 @@ select {
 
 .button,
 button,
-input[type='button'],
-input[type='reset'],
-input[type='submit'] {
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   background-color: $azul;
   border-color: $azul;
 }
 
-input[type='email']:focus,
-input[type='number']:focus,
-input[type='password']:focus,
-input[type='search']:focus,
-input[type='tel']:focus,
-input[type='text']:focus,
-input[type='url']:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
 textarea:focus,
 select:focus {
-  border-color: $azul
+  border-color: $azul;
 }
 
 .react-phone-number-input__country--native {
@@ -136,4 +135,8 @@ blockquote {
       text-decoration: underline;
     }
   }
+}
+#root {
+  background-image: url(./bg.png);
+  background-size: cover;
 }
