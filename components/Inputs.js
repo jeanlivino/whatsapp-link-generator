@@ -2,7 +2,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
 
 function InputPhone({ updatePhone, phone, formChangeState }) {
