@@ -2,6 +2,7 @@ import React from 'react'
 import uaParser from 'ua-parser-js'
 
 import { isDev } from '../utils/is'
+import { connectToDatabase } from '../utils/mongodb'
 
 const goPage = props => <div>{JSON.stringify(props)}</div>
 
@@ -20,12 +21,20 @@ export async function getServerSideProps({ req, query }) {
       props: content,
     }
 
-  return {
+  const response = {
     props: {},
     redirect: {
       destination: url,
       permanent: false,
     },
+  }
+  try {
+    const { db } = await connectToDatabase()
+    await db.collection('clicks').insertOne(content)
+    return response
+  } catch (e) {
+    console.error(e)
+    return response
   }
 }
 export default goPage

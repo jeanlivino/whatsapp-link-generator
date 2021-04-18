@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint *.js --fix"
+    "start": "next start"
   },
   "author": "Jean Livino",
   "license": "ISC",
