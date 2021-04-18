@@ -1,13 +1,13 @@
-import React from 'react';
+import React from 'react'
+
+import FooterWrapper from '~/ui/FooterWrapper'
 
 const Footer = () => (
-  <section className="footer">
+  <FooterWrapper>
     <p>
-      <a href="https://github.com/jeanlivino">
-        developed by jeanlivino
-      </a>
+      <a href="https://github.com/jeanlivino">developed by jeanlivino</a>
     </p>
-  </section>
-);
+  </FooterWrapper>
+)
 
-export default Footer;
+export default Footer
