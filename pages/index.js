@@ -34,10 +34,10 @@ const HomePage = () => {
   }
 
   const updateLink = state => {
-    const { hostname } = window.location
-    const formattedLink = `http://${hostname}/go/?p=${state.phone ? state.phone.substr(1) : ''}&m=${
-      state.message ? state.message : ''
-    }`
+    const { hostname, protocol } = window.location
+    const formattedLink = `${protocol}//${hostname}/go/?p=${
+      state.phone ? state.phone.substr(1) : ''
+    }&m=${state.message || ''}`
     setLink(formattedLink)
   }
 
