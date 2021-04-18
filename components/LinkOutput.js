@@ -7,7 +7,7 @@ function LinkOutput({ link, onCopy, isCopied }) {
     <section className="your-link">
       <h3>your link</h3>
       <div className="row copy-to">
-        <input className="column column-75" type="text" name="link" value={link} />
+        <input readOnly className="column column-75" type="text" name="link" value={link} />
         <CopyToClipboard text={link} onCopy={onCopy}>
           <button type="submit" className="column column-25">
             Copy to Clipboard
