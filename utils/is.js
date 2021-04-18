@@ -1,0 +1,1 @@
+export const isDev = () => /dev/.test(process.env.NODE_ENV)
