@@ -4,7 +4,7 @@ const PageWrapper = styled('section', {
   minHeight: '100vh',
   display: 'flex',
   alignItems: 'center',
-  backgroundImage: 'url(/bg.png)',
+  backgroundImage: 'url(/bg.jpg)',
   backgroundSize: 'cover',
   // global styles
   '*': { maxWidth: '100%' },
