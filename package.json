@@ -22,6 +22,40 @@
     "ua-parser-js": "^0.7.28"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^22.17.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-simple-import-sort": "^5.0.1",
+    "eslint-plugin-unused-imports": "^0.1.2",
+    "git-cz": "^4.6.1",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.0.8",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
     "sass": "^1.32.10"
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged --allow-empty",
+      "prepare-commit-msg": "exec < /dev/tty && git-cz --hook || true"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix"
+    ]
   }
 }
