@@ -1,9 +1,13 @@
-import React from 'react'
+import { useEffect } from 'react'
 import uaParser from 'ua-parser-js'
 
-import { isDev } from '../utils/is'
+const goPage = ({ url }) => {
+  useEffect(() => {
+    window.location.href = url
+  }, [])
 
-const goPage = props => <div>{JSON.stringify(props)}</div>
+  return ''
+}
 
 export async function getServerSideProps({ req, query }) {
   const ua = uaParser(req.headers['user-agent'])
@@ -14,17 +18,10 @@ export async function getServerSideProps({ req, query }) {
     type === 'desktop'
       ? `https://web.whatsapp.com/send?phone=${p}&text=${m}`
       : `whatsapp://send?phone=${p}&text=${m}`
-  const content = { phone: p, message: m, type }
-  if (isDev())
-    return {
-      props: content,
-    }
 
   return {
-    props: {},
-    redirect: {
-      destination: url,
-      permanent: false,
+    props: {
+      url,
     },
   }
 }
