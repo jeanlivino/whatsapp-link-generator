@@ -1,17 +1,32 @@
-import React from 'react'
-import PhoneInput from 'react-phone-number-input'
+import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
 
-function InputPhone({ updatePhone, phone, formChangeState }) {
+const formatPhone = value => {
+  const cleaned = value.replace(/\D/g, '')
+
+  if (cleaned.length <= 10) {
+    return cleaned.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3')
+  } else {
+    return cleaned.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3')
+  }
+}
+
+function InputPhone({ updatePhone, formChangeState }) {
+  const [phoneValue, setPhoneValue] = React.useState('')
+
+  useEffect(() => {
+    updatePhone(phoneValue.replace(/\D/g, '')) // envia só os números limpos
+  }, [phoneValue])
+
   return (
     <section className="inputs">
       <label htmlFor="phone">Telefone</label>
-      <PhoneInput
-        country="BR"
+      <input
         name="phone"
         placeholder="Digite o número de telefone..."
-        value={phone}
-        onChange={updatePhone}
+        value={phoneValue}
+        onChange={e => setPhoneValue(formatPhone(e.target.value))}
+        maxLength={15}
       />
       <label htmlFor="message">Mensagem</label>
       <textarea
@@ -23,6 +38,7 @@ function InputPhone({ updatePhone, phone, formChangeState }) {
     </section>
   )
 }
+
 InputPhone.defaultProps = {
   phone: '',
 }

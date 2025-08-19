@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react'
+'use client'
+
+import React, { useMemo, useState } from 'react'
 
 import Footer from '../components/Footer'
 import Header from '../components/Header'
@@ -12,7 +14,6 @@ const HomePage = () => {
     message: '',
     phone: '',
   })
-  const [link, setLink] = useState('')
   const [isCopied, setIsCopied] = useState(false)
 
   const formChangeState = e => {
@@ -33,22 +34,17 @@ const HomePage = () => {
     }))
   }
 
-  const updateLink = state => {
+  const link = useMemo(() => {
+    if (typeof window === 'undefined') return ''
+
     const { hostname, protocol } = window.location
-    const formattedLink = `${protocol}//${hostname}/go/?p=${
-      state.phone ? state.phone.substr(1) : ''
-    }&m=${state.message || ''}`
-    setLink(formattedLink)
-  }
+    return `${protocol}//${hostname}/go/?p=${fields.phone}&m=${fields.message || ''}`
+  }, [fields])
 
   const onCopy = () => {
     setIsCopied(true)
     setTimeout(() => setIsCopied(false), 3000)
   }
-
-  useEffect(() => {
-    updateLink(fields)
-  }, [fields])
 
   return (
     <PageWrapper>
