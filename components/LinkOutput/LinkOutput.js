@@ -7,12 +7,12 @@ import { Wrapper } from './style'
 function LinkOutput({ link, onCopy, isCopied }) {
   return (
     <Wrapper>
-      <h3>your link</h3>
+      <h3>Link:</h3>
       <div className="row">
         <input readOnly className="column column-75" type="text" name="link" value={link} />
         <CopyToClipboard text={link} onCopy={onCopy}>
           <button type="submit" className="column column-25">
-            Copy to Clipboard
+            Copiar Link
           </button>
         </CopyToClipboard>
       </div>

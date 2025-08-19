@@ -10,7 +10,7 @@ const Header = () => (
         fill="#fff"
       />
     </svg>
-    <h1>WhatsApp Link Generator</h1>
+    <h1>Gerador de Link para Whatsapp</h1>
   </HeaderWrapper>
 )
 

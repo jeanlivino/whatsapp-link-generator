@@ -1,37 +1,36 @@
-/* eslint-disable jsx-a11y/label-has-for */
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
-import PropTypes from 'prop-types';
-import PhoneInput from 'react-phone-number-input';
+import React from 'react'
+import PhoneInput from 'react-phone-number-input'
+import PropTypes from 'prop-types'
 
 function InputPhone({ updatePhone, phone, formChangeState }) {
   return (
     <section className="inputs">
-      <label htmlFor="phone">your phone</label>
+      <label htmlFor="phone">Telefone</label>
       <PhoneInput
+        country="BR"
         name="phone"
-        placeholder="Enter phone number"
+        placeholder="Digite o número de telefone..."
         value={phone}
         onChange={updatePhone}
       />
-      <label htmlFor="message">your message</label>
+      <label htmlFor="message">Mensagem</label>
       <textarea
         label="Mensagem"
-        placeholder="Type your message..."
+        placeholder="Digite a mensagem padrão..."
         name="message"
         onChange={formChangeState}
       />
     </section>
-  );
+  )
 }
 InputPhone.defaultProps = {
-  phone: ''
-};
+  phone: '',
+}
 
 InputPhone.propTypes = {
   updatePhone: PropTypes.func.isRequired,
   formChangeState: PropTypes.func.isRequired,
-  phone: PropTypes.string
-};
+  phone: PropTypes.string,
+}
 
-export default InputPhone;
+export default InputPhone
