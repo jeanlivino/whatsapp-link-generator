@@ -38,7 +38,7 @@ const HomePage = () => {
     if (typeof window === 'undefined') return ''
 
     const { hostname, protocol } = window.location
-    return `${protocol}//${hostname}/go/?p=${fields.phone}&m=${fields.message || ''}`
+    return `${protocol}//${hostname}/go/?p=55${fields.phone}&m=${fields.message || ''}`
   }, [fields])
 
   const onCopy = () => {
